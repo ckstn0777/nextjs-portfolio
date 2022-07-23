@@ -1,0 +1,44 @@
+{
+  "name": "김찬수",
+  "name_EN": "Chansu Kim",
+  "home": {
+    "title": "Hi, I'm Chansu Kim",
+    "subtitles": ["Front-end developer"],
+    "professionalDetails": [
+      {
+        "alt": "github",
+        "icon": "github",
+        "link": "https://github.com/ckstn0777"
+      },
+      {
+        "alt": "email",
+        "icon": "naver",
+        "link": ""
+      }
+    ],
+    "projects": {
+      "baseURI": "https://ckstn0777.github.io/nextjs-portfolio/details/",
+      "recentProject": []
+    },
+    "skills": {
+      "Languages known": [],
+      "Frontend": [],
+      "Backend, Database and Cloud": []
+    }
+  },
+  "myWorks": [
+    {
+      "title": "",
+      "hash": "",
+      "html": ""
+    }
+  ],
+  "career": [
+    {
+      "company": "웅진씽크빅",
+      "datetime": "",
+      "assistant": "연구원",
+      "responsibilities": []
+    }
+  ]
+}
