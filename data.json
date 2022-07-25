@@ -3,7 +3,10 @@
   "name_EN": "Chansu Kim",
   "home": {
     "title": "Hi, I'm Chansu Kim",
-    "subtitles": ["Front-end developer"],
+    "subtitles": [
+      "I'm a Front-End Developer 💻",
+      "I build things for the web 🌐"
+    ],
     "professionalDetails": [
       {
         "alt": "github",
