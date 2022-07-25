@@ -25,7 +25,7 @@ const Home: NextPage = () => {
           <div className="flex">
             <Link href={'https://github.com/ckstn0777'}>
               <a
-                className="before:contents-[''] before:w-6 before:h-6 before:bg-[url('/image/github.svg')] before:block 
+                className="before:contents-[''] before:w-6 before:h-6 before:bg-[url('image/github.svg')] before:block 
                 basis-1/4 text-white bg-black w-28 py-3 px-4 mr-3 inline-flex items-center justify-around rounded-md"
               >
                 Github
@@ -33,7 +33,7 @@ const Home: NextPage = () => {
             </Link>
             <Link href={'https://velog.io/@ckstn0777'}>
               <a
-                className="before:contents-[''] before:w-6 before:h-6 before:bg-[url('/image/velog.svg')] before:block 
+                className="before:contents-[''] before:w-6 before:h-6 before:bg-[url('image/velog.svg')] before:block 
                 basis-1/4 text-white bg-velog w-28 py-3 px-4 mr-3 inline-flex items-center justify-around rounded-md"
               >
                 Velog
@@ -45,7 +45,7 @@ const Home: NextPage = () => {
               }
             >
               <a
-                className="before:contents-[''] before:w-6 before:h-6 before:bg-[url('/image/notion.svg')] before:block 
+                className="before:contents-[''] before:w-6 before:h-6 before:bg-[url('image/notion.svg')] before:block 
                 basis-1/4 text-black bg-white w-28 border-2 border-black py-3 px-4 inline-flex items-center justify-around rounded-md"
               >
                 Notion
