@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import { mixins } from '../../lib/styles'
+import { mixins } from '../../lib/mixins'
 
 type ButtonProps = {
   text: string
