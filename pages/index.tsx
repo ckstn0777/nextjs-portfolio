@@ -9,12 +9,12 @@ const { name, name_EN, home } = data
 const Home: NextPage = () => {
   return (
     <section className="pt-32 2xl:max-w-7xl xl:max-w-5xl lg:max-w-4xl md:max-w-2xl sm:max-w-md max-w-sm mx-auto">
-      <Button text="가나다" />
+      <Button text="가나다" color="#913d24" />
       <div className="flex justify-center max-h-96 py-16">
         <div className="flex-auto py-4 flex flex-col justify-between">
           <h2 className="text-4xl font-bold	tracking-wider leading-10">
             Hello, <br />
-            I&apos;m <span style={{ color: '#007acc' }}>{name_EN}</span>.
+            I&apos;m <span style={{ color: '#246591' }}>{name_EN}</span>.
           </h2>
           <h3 className="text-2xl">
             <ReactTyped
