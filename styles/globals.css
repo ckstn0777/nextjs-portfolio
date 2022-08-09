@@ -1,9 +1,10 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
+/* 기본 reset.css 설정 */
 :root {
-  font-size: 62.5%;
+  font-size: 62.5%; /* 16px * 62.5% = 10px */
 }
 
 * {
@@ -35,6 +36,7 @@ a {
   text-decoration: none;
 }
 
+/* 다크모드 */
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -44,3 +46,37 @@ a {
     background: black;
   }
 }
+
+/* 반응형 font-size 조정 */
+/* Mobile devices */
+@media only screen and (max-width: 480px) {
+  :root {
+    font-size: 40%;
+  } 
+}
+/* iPads, Tablets */
+@media only screen and (min-width: 480px) {
+  :root {
+    font-size: 45%;
+  } 
+}
+/* Small screens, laptops */
+@media only screen and (min-width: 768px) {
+  :root {
+    font-size: 50%;
+  } 
+}
+/* large devices */
+@media only screen and (min-width: 1024px) {
+  :root {
+    font-size: 55%;
+  } 
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  :root {
+    font-size: 62.5%;
+  } 
+}
+
+

@@ -1,15 +1,17 @@
+import { css } from '@emotion/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import { mixins } from '../../lib/mixins'
 
 function Header() {
   const router = useRouter()
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full p-4 shadow-md flex justify-center content-center">
-      <div className="w-full flex flex-wrap justify-between">
-        <div className="w-64 ml-2">
+    <nav css={wrapper}>
+      <div css={headerWrapper}>
+        <div css={logoWrapper}>
           <Link href={'/'}>
             <a>
               <img src="Logo.png" alt="logo" />
@@ -19,35 +21,44 @@ function Header() {
 
         <button
           id="menu-btn"
+          css={menuBtnWrapper}
           data-collapse-toggle="navbar-default"
           type="button"
-          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-default"
           aria-expanded="false"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <span className="sr-only">Open main menu</span>
+          <span className="sr-only"></span>
           <svg
-            className="w-6 h-6"
-            aria-hidden="true"
-            fill="currentColor"
-            viewBox="0 0 20 20"
+            fill="none"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              fillRule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clipRule="evenodd"
-            ></path>
+            <g clipPath="url(#clip0_105_1724)">
+              <path
+                d="M3 6.00098H21M3 12.001H21M3 18.001H21"
+                stroke="#292929"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_105_1724">
+                <rect
+                  fill="white"
+                  height="24"
+                  transform="translate(0 0.000976562)"
+                  width="24"
+                />
+              </clipPath>
+            </defs>
           </svg>
         </button>
 
-        <div
-          className={`mr-4 md:flex md:flex-row justify-center items-center ${
-            menuOpen ? 'w-full flex flex-col' : 'hidden'
-          }`}
-          id="navbar-default"
-        >
+        <div id="navbar-default" css={linkWrapper(menuOpen)}>
           <Link href={'/'}>
             <a
               className="px-4 py-2"
@@ -91,5 +102,79 @@ function Header() {
     </nav>
   )
 }
+
+const wrapper = css`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+
+  width: 100%;
+  padding: 2rem 2.8rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const headerWrapper = css`
+  width: 80%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ${mixins.mediaQuery.small} {
+    width: 90%;
+    font-size: 2rem;
+    flex-wrap: wrap;
+  }
+`
+
+const logoWrapper = css`
+  width: 24rem;
+
+  img {
+    width: 100%;
+  }
+`
+
+const linkWrapper = (menuOpen: boolean) => css`
+  display: flex;
+  gap: 4rem;
+  font-size: 1.125em;
+  font-weight: 500;
+
+  ${mixins.mediaQuery.small} {
+    display: none;
+
+    ${menuOpen &&
+    css`
+      width: 100vw;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      & > * {
+        width: 100%;
+        text-align: center;
+        padding: 4px 0;
+      }
+    `}
+  }
+`
+
+const menuBtnWrapper = css`
+  display: none;
+  cursor: pointer;
+
+  ${mixins.mediaQuery.small} {
+    display: block;
+    background: none;
+    outline: none;
+    border: none;
+  }
+`
 
 export default Header
