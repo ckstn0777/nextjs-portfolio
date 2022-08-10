@@ -1,6 +1,7 @@
 import { css } from '@emotion/react'
 import Link from 'next/link'
 import ReactTyped from 'react-typed'
+import { mixins } from '../../lib/mixins'
 
 type IntroduceType = {
   name_EN: string
@@ -57,6 +58,12 @@ const ariticleWrapper = css`
   & > * {
     flex-basis: 50%;
   }
+
+  ${mixins.mediaQuery.small} {
+    & > * {
+      flex-basis: 100%;
+    }
+  }
 `
 
 const introduceWrapper = css`
@@ -70,16 +77,25 @@ const introduceWrapper = css`
   & > * {
     flex-basis: 33.3%;
   }
+
+  ${mixins.mediaQuery.small} {
+    height: 32rem;
+  }
 `
 
 const introduceImg = css`
   max-height: 32rem;
   height: auto;
   width: auto;
+
+  ${mixins.mediaQuery.small} {
+    display: none;
+  }
 `
 
 const linkBtnWrapper = css`
   display: flex;
+  align-items: center;
   gap: 10px;
 `
 

@@ -1,27 +1,27 @@
 import { css } from '@emotion/react'
+import useScrollFadeIn from '../../hooks/useScrollFadeIn'
 import { Project } from '../../types/type'
 
 type ProjectCardType = {
-  projects: Project[]
+  project: Project
 }
 
-function ProjectCard({ projects }: ProjectCardType) {
+function ProjectCard({ project }: ProjectCardType) {
+  /* 스크롤 효과 - 화면에 보일 시 자연스럽게 위로 올라오는 효과 주기 */
+  const { ref, style } = useScrollFadeIn('up')
+
   return (
-    <>
-      {projects.map((project, idx: number) => (
-        <div css={cardWrapper} key={idx}>
-          <div className="dimmed"></div>
-          <div className="circle">
-            <span>
-              VIEW <br />
-              PROJECT
-            </span>
-          </div>
-          <img src={`image/project/${project.image}`} alt="" />
-          <p>{project.title}</p>
-        </div>
-      ))}
-    </>
+    <div css={cardWrapper} ref={ref} style={{ ...style }}>
+      <div className="dimmed"></div>
+      <div className="circle">
+        <span>
+          VIEW <br />
+          PROJECT
+        </span>
+      </div>
+      <img src={`image/project/${project.image}`} alt="" />
+      <p>{project.title}</p>
+    </div>
   )
 }
 
@@ -62,7 +62,7 @@ const cardWrapper = css`
     height: 300px;
     border-radius: 30px;
 
-    object-fit: cover;
+    object-fit: contain;
   }
 
   p {

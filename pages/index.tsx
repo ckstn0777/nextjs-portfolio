@@ -25,13 +25,18 @@ const Home: NextPage = () => {
       <article>
         <Title title="My recent works" />
         <div css={projectCardWrapper}>
-          <ProjectCard projects={projects.recentProject} />
+          {projects.recentProject.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
         </div>
-        <button>Show More</button>
+        <div css={showMoreBtnWrapper}>
+          <button>Show More</button>
+        </div>
       </article>
 
-      <div className="py-16">What I have & Interests</div>
-      <div className="py-16">Made this website as following</div>
+      <article style={{ paddingBottom: '30rem' }}>
+        <Title title="What I have & Interests" />
+      </article>
     </section>
   )
 }
@@ -46,7 +51,7 @@ const sectionWrapper = css`
   background: white;
 
   & > * {
-    padding: 6rem 0;
+    padding: 6.5rem 0;
   }
 
   ${mixins.mediaQuery.large} {
@@ -63,8 +68,50 @@ const projectCardWrapper = css`
   align-items: center;
   gap: 40px;
 
+  margin-bottom: 8rem;
+
   & > * {
     flex-basis: 33.3%;
+  }
+
+  ${mixins.mediaQuery.small} {
+    flex-wrap: wrap;
+    gap: 40px;
+
+    & > * {
+      flex-basis: 42%;
+    }
+  }
+
+  ${mixins.mediaQuery.xsmall} {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+
+    & > * {
+      flex-basis: 80%;
+    }
+  }
+`
+
+const showMoreBtnWrapper = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  & > button {
+    padding: 1.45rem 1.75rem;
+    font-size: 0.9em;
+    font-weight: 600;
+    outline: none;
+    background-color: white;
+    border: 3px solid #007acc;
+    border-radius: 4px;
+    color: #007acc;
+
+    cursor: pointer;
   }
 `
 

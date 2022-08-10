@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../Footer'
 import Header from '../Header'
 
 type LayoutProps = {
@@ -10,6 +11,7 @@ function Layout({ children }: LayoutProps) {
     <>
       <Header />
       {children}
+      <Footer />
     </>
   )
 }

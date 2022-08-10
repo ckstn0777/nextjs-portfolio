@@ -87,14 +87,14 @@ function Header() {
               Career
             </a>
           </Link>
-          <Link href={'/review'}>
+          <Link href={'/playground'}>
             <a
               className="px-4 py-2"
               style={{
-                color: router.pathname == '/review' ? '#007acc' : 'black',
+                color: router.pathname == '/playground' ? '#007acc' : 'black',
               }}
             >
-              Review
+              Playground
             </a>
           </Link>
         </div>
