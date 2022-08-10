@@ -19,23 +19,36 @@
         "link": ""
       }
     ],
-    "projects": {
-      "baseURI": "https://ckstn0777.github.io/nextjs-portfolio/details/",
-      "recentProject": []
-    },
+
     "skills": {
       "Languages known": [],
       "Frontend": [],
       "Backend, Database and Cloud": []
     }
   },
-  "myWorks": [
-    {
-      "title": "",
-      "hash": "",
-      "html": ""
-    }
-  ],
+  "projects": {
+    "baseURI": "https://ckstn0777.github.io/nextjs-portfolio/details/",
+    "recentProject": [
+      {
+        "title": "포토백과 lite",
+        "hash": "",
+        "html": "",
+        "image": "photo_dict.png"
+      },
+      {
+        "title": "모바일 백과",
+        "hash": "",
+        "html": "",
+        "image": "mobile_dict.png"
+      },
+      {
+        "title": "백과투데이",
+        "hash": "",
+        "html": "",
+        "image": "mobile_dict.png"
+      }
+    ]
+  },
   "career": [
     {
       "company": "웅진씽크빅",

@@ -11,6 +11,7 @@ function Title({ title }: TitleProps) {
 const titleWrapper = (stringLength: number) => css`
   position: relative;
   font-size: 3.2rem;
+  margin-bottom: 4rem;
 
   &::after {
     content: '';

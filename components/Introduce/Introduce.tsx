@@ -20,17 +20,28 @@ function Introduce({ name_EN, subTitle }: IntroduceType) {
         </h3>
         <div css={linkBtnWrapper}>
           <Link href="https://github.com/ckstn0777">
-            <a css={linkBtn('image/github.svg', 'black', 'white')}>Github</a>
+            <a
+              href="https://github.com/ckstn0777"
+              css={linkBtn('image/github.svg', 'black', 'white')}
+            >
+              Github
+            </a>
           </Link>
-          <Link href={'https://velog.io/@ckstn0777'}>
-            <a css={linkBtn('image/velog.svg', '#12B886', 'white')}>Velog</a>
+          <Link href="https://velog.io/@ckstn0777">
+            <a
+              href="https://velog.io/@ckstn0777"
+              css={linkBtn('image/velog.svg', '#12B886', 'white')}
+            >
+              Velog
+            </a>
           </Link>
-          <Link
-            href={
-              'https://ckstn0777.notion.site/Home-4bf10a0a0e2c4b0994adfec7ccb38053'
-            }
-          >
-            <a css={linkBtn('image/notion.svg', 'white', 'black')}>Notion</a>
+          <Link href="https://ckstn0777.notion.site/Home-4bf10a0a0e2c4b0994adfec7ccb38053">
+            <a
+              href="https://ckstn0777.notion.site/Home-4bf10a0a0e2c4b0994adfec7ccb38053"
+              css={linkBtn('image/notion.svg', 'white', 'black')}
+            >
+              Notion
+            </a>
           </Link>
         </div>
       </div>
