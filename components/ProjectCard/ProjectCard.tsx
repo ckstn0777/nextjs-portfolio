@@ -34,9 +34,9 @@ const cardWrapper = css`
 
     width: 100%;
     height: 300px;
-    border-radius: 30px;
+    border-radius: 24px;
 
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(124, 136, 156, 0.22);
   }
 
   & > .circle {
