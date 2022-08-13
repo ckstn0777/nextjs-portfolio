@@ -1,17 +1,28 @@
 import { css } from '@emotion/react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { useEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
+import * as THREE from 'three'
 
-function CoinMesh() {
+function BoxLineMesh() {
   const mesh = useRef<any>(null)
-  useFrame(() => (mesh.current.rotation.y = mesh.current.rotation.z += 0.01)) // #2
+  const seg = useRef<any>(null)
+
+  useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01))
+
+  useLayoutEffect(() => {
+    seg.current.geometry = new THREE.EdgesGeometry(mesh.current.geometry)
+  }, [])
 
   return (
-    <mesh ref={mesh} scale={0.7}>
-      <cylinderBufferGeometry args={[1, 1, 0.3, 50]} />
-      {/* <boxGeometry args={[1, 1, 1]} /> */}
-      <meshLambertMaterial attach="material" color="#ff9800" />
-    </mesh>
+    <group>
+      <mesh ref={mesh}>
+        <boxBufferGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color={'orange'} />
+        <lineSegments ref={seg}>
+          <meshBasicMaterial color="black" />
+        </lineSegments>
+      </mesh>
+    </group>
   )
 }
 
@@ -20,11 +31,11 @@ function PlaygroundOne() {
     <div css={playgroundWrapper}>
       <Canvas
         camera={{
-          position: [0, 10, 1],
+          position: [0, 5, 5],
         }}
       >
         <ambientLight color={'white'} intensity={0.3} />
-        <CoinMesh />
+        <BoxLineMesh />
       </Canvas>
     </div>
   )
