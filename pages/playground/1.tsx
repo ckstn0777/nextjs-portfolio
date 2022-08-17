@@ -1,13 +1,14 @@
 import { css } from '@emotion/react'
-import { Canvas, useFrame } from '@react-three/fiber'
 import { useEffect, useLayoutEffect, useRef } from 'react'
 import * as THREE from 'three'
+import { Canvas, useFrame } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
 
 function BoxLineMesh() {
   const mesh = useRef<any>(null)
   const seg = useRef<any>(null)
 
-  useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01))
+  // useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01))
 
   useLayoutEffect(() => {
     seg.current.geometry = new THREE.EdgesGeometry(mesh.current.geometry)
@@ -36,6 +37,7 @@ function PlaygroundOne() {
       >
         <ambientLight color={'white'} intensity={0.3} />
         <BoxLineMesh />
+        <OrbitControls rotateSpeed={2} />
       </Canvas>
     </div>
   )
