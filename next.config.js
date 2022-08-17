@@ -4,8 +4,8 @@ const debug = process.env.NODE_ENV !== 'production'
 const name = 'nextjs-portfolio'
 
 const nextConfig = {
-  assetPrefix: !debug ? `/${name}` : '',
-  basePath: !debug ? `/${name}` : '',
+  // assetPrefix: !debug ? `/${name}` : '',
+  // basePath: !debug ? `/${name}` : '',
   images: {
     loader: 'akamai',
     path: '',

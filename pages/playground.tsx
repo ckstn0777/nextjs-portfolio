@@ -10,7 +10,11 @@ function Playground() {
         <Link href="/playground/1">
           <div>플레이그라운드 1번 - three.js 기초</div>
         </Link>
-        <div>플레이그라운드 2번 - canvas 다루기</div>
+
+        <Link href="/playground/2">
+          <div>플레이그라운드 2번 - three.js 키보드 컨트롤</div>
+        </Link>
+
         <div>플레이그라운드 3번</div>
         <div>플레이그라운드 4번</div>
         <div>플레이그라운드 5번</div>
@@ -33,6 +37,7 @@ const playgroundWrapper = css`
 const playgroundCardWrapper = css`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
 
   & > * {
     padding: 2rem 0;
