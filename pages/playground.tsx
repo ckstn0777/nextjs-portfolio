@@ -8,11 +8,17 @@ function Playground() {
       <Title title="Playground" />
       <div css={playgroundCardWrapper}>
         <Link href="/playground/1">
-          <div>플레이그라운드 1번 - three.js 기초</div>
+          <div>
+            <h3>플레이그라운드 1번</h3>
+            <p>three.js 기초 및 마우스 컨트롤</p>
+          </div>
         </Link>
 
         <Link href="/playground/2">
-          <div>플레이그라운드 2번 - three.js 키보드 컨트롤</div>
+          <div>
+            <h3>플레이그라운드 2번</h3>
+            <p>three.js 물리엔진 적용하기</p>
+          </div>
         </Link>
 
         <div>플레이그라운드 3번</div>
